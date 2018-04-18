@@ -31,8 +31,20 @@ Composition is the concept that classes should be arranged in such a way as to r
 7. When would you use composition? Provide a simple example in Java.
 When you want a number of classes that are inherited from a parent class to have different functionality than the rest, without modifying the whole class structure or adding it unnecessarily to the classes that don't require it
 
-eg.  
-	
+eg.  public class Window {
+     }
+     
+     public class Wall {
+ 
+	private Window window;
+ 
+	public Wall() {
+		this.window = new Window();
+	}
+ 
+}
+
+- Wall contains a window
 
 
 8. What is/are the advantage(s) of using composition?
@@ -41,3 +53,4 @@ It allows you to compact your code, to reuse as much as possible and to future-p
 
 
 9. What happens to the behaviours when the object composed of them is destroyed?
+Nothing happens as it's still stored in the interface
